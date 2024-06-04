@@ -1,10 +1,11 @@
-from get_meal import get_meal
+from get_meal import Meal
 from create_image import create_image
 import datetime
 
 from instagram_bot import InstagramBot
 from tool.confing_tool import *
 
+meal = Meal()
 configtool = ConfingTool()
 create_image = create_image()
 configtool.setup_config()
@@ -17,7 +18,7 @@ font_path = configtool.get_config("image_font_path")
 output_path = os.path.abspath('.') + "/output/"
 date = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
 
-meal_data = get_meal(key, city_code, school_code, date.strftime("%Y%m%d"))
+meal_data = meal.get_meal(key, city_code, school_code, date.strftime("%Y%m%d"))
 create_image.feed_image(meal_data, font_path, date)
 create_image.story_image(meal_data, font_path, date)
 
