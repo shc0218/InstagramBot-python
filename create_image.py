@@ -50,10 +50,6 @@ class create_image:
             menu_font, menu_tw, menu_th = self.__set_font(font_path, menu, 70)
             self.__draw_text(origin_image=origin_image, font=menu_font, text=menu, x=100, y=(500+(150*meal_data["meal_menu"].index(menu))))
 
-        allergy_text= f"*알러지: {", ".join(meal_data['meal_allergy'])}"
-        allergy_font, allergy_tw, allergy_th = self.__set_font(font_path, allergy_text, 32)
-        self.__draw_text(origin_image, allergy_font, allergy_text, w/2 - allergy_tw/2, h - 200)
-
         if not path.exists(os.path.abspath('.') + "/output"):
             os.mkdir(os.path.abspath('.') + f"/output")
         origin_image.save(os.path.abspath('.') + f"/output/{title}-story.jpg")
