@@ -17,8 +17,6 @@ school_code = configtool.get_config("neis_api_school_code")
 font_path = configtool.get_config("image_font_path")
 output_path = os.path.abspath('.') + "/output/"
 
-instagram_bot.bot_start(configtool.get_config("instagram_username"), configtool.get_config("instagram_password"))
-
 while True:
     date = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
     if date.weekday() <= 4:
@@ -28,8 +26,11 @@ while True:
                 if not meal_data["meal_menu"] == [] and not meal_data["meal_allergy"] == []:
                     create_image.feed_image(meal_data, font_path, date)
                     create_image.story_image(meal_data, font_path, date)
+                    instagram_bot.bot_start(configtool.get_config("instagram_username"),
+                                            configtool.get_config("instagram_password"))
                     instagram_bot.upload_feed(output_path, date)
                     instagram_bot.upload_story(output_path, date)
+                    instagram_bot.bot_stop()
                     configtool.set_config("upload", False)
                 else:
                     print("오늘의 급식이 존재하지 않습니다!")
