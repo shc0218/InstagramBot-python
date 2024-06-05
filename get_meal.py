@@ -34,4 +34,4 @@ class Meal:
                                 res["meal_allergy"].append(allergy_list[int(menu_allergy) - 1])
                 res["meal_menu"].append(meal.split(" ")[0])
 
-            return res
+        return res

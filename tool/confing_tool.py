@@ -20,7 +20,7 @@ class ConfingTool:
             f = open(self.__path, "w")
             f.write(json.dumps(self.__standard_format, indent="\t"))
             f.close()
-    def get_config(self, key: str):
+    def get_config(self, key: str) -> str or bool:
         with open(self.__path, 'r') as f:
             json_data = json.load(f)
         if key in json_data.keys():
