@@ -11,7 +11,8 @@ class ConfingTool:
             "image_font_path": "",
             "instagram_username": "",
             "instagram_password": "",
-            "highlights_id": ""
+            "highlights_id": "",
+            "upload": True
         }
         self.__path = os.path.abspath('.') + "/config.json"
     def setup_config(self):
