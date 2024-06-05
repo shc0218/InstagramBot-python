@@ -7,7 +7,7 @@ from tool.dateTools import chage_korean_dayofweek
 from PIL import Image, ImageDraw, ImageFont
 import os
 from os import path
-class create_image:
+class CreateImage:
     def __set_font(self, font_path: str, text: str, font_size: int) -> tuple:
         font = ImageFont.truetype(font=font_path, size=font_size, encoding="utf-8")
         left, top, right, bottom = font.getbbox(text)
