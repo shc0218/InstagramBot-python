@@ -7,9 +7,9 @@
 ## 사용법
 최소 사용시, config.json이 생성되고, 필요한 내용을 작성 후, 실행
 ## requirements
-- **[instagrapi](https://github.com/subzeroid/instagrapi)**
+- **[instagrapi](https://pypi.org/project/instagrapi)**
  
-- **pillow**
+- **[pillow](https://pypi.org/project/pillow/)**
 
-- **requests**
+- **[requests](https://pypi.org/project/requests/)**
 
