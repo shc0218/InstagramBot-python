@@ -1,4 +1,3 @@
-from create_image import CreateImage
 from Thread.upload import upload_bot
 from Thread.DM import DM_bot
 import threading

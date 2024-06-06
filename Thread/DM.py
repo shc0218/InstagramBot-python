@@ -9,9 +9,7 @@ def DM_bot(key: str, city_code: str, school_code: str, font_path: str, output_pa
     while True:
         date = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
         prefix = "!"
-        last_DM_data = instagram_bot.get_last_message_and_channel()
-        if last_DM_data[1].replace(prefix, "") == "실행":
-           instagram_bot.send_text_message("인스타그램봇이 실행중입니다.", last_DM_data[0])
+        last_DM_data: tuple = instagram_bot.get_last_message_and_channel()
         if last_DM_data[1].replace(prefix, "") == "오늘급식":
             meal = Meal()
             meal_data = meal.get_meal(key, city_code, school_code, date.strftime("%Y%m%d"))
